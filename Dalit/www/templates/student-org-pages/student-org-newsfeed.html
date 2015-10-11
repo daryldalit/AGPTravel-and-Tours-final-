@@ -1,0 +1,83 @@
+<ion-view view-title="Student Organization" >
+  <ion-content ng-controller="SetCriteriaCtrl">
+
+
+
+
+  <!--div class="item item-avatar">
+    <img src="mcfly.jpg">
+    <h2>Abubakar Basman</h2>
+    <p>President</p>
+  </div>
+
+  <div class="item item-body">
+    img class="full-image" src="delorean.jpg">
+    <p>
+     {{ posts.comment }}
+    </p>
+    <p>
+      <a href="#" class="subdued">1 Like</a>
+      <a href="#" class="subdued">5 Comments</a>
+    </p>
+  </div>
+
+  <div class="item tabs tabs-secondary tabs-icon-left">
+    <a class="tab-item" href="#">
+      <i class="icon ion-thumbsup"></i>
+      Like
+    </a>
+    <a class="tab-item" ng-click="$parent.showCommentBox = true">
+      <i class="icon ion-chatbox"></i>
+      Comment
+    </a>
+    <a class="tab-item" href="#">
+      <i class="icon ion-share"></i>
+      Share
+    </a>
+  </div>
+</div-->
+<div ng-hide="postform">
+<div style="
+">
+  <div class="button-bar">
+  <a class="button button-assertive" ng-click="postform = true">Post</a>
+  <a class="button button-assertive" href="#/app/student-org-list">Students</a>
+  <a class="button button-assertive" ng-click="login()">Third</a>
+</div>
+</div>
+
+<div class="card" ng-repeat="posts in StudentOrgPosts">
+  <div class="item item-text-wrap">
+    {{ posts.post }}
+    <br/><br/>
+      <div align="right">
+        <h3>- {{ posts.postedBy }}</h3></div>
+  </div>
+</div>
+
+
+  <br/><br/>
+</div>
+
+
+ <div style="
+"> 
+<div class="form-group" ng-show="postform">
+  <textarea class="form-control" rows="10" id="comment" placeholder="What's on your mind?" ng-model="studentOrg.post"></textarea><br/>
+  <button class="button button-small button-positive" ng-click="AddStudentOrgPost()">Post</button>
+  <button class="button button-small button-assertive" ng-click="postform = false">Cancel</button>
+</div>  
+
+
+        
+        
+
+</div>
+
+   
+
+
+
+
+  </ion-content>
+</ion-view>

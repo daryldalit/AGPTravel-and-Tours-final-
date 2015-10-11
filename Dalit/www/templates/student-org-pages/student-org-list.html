@@ -1,0 +1,76 @@
+ <ion-view view-title="Student Organization" >
+  <ion-content>
+
+ <div style="margin-left: 13px;
+            padding-top: 15px;
+            margin-right: 13px;
+"> 
+  <div ng-controller="SetCriteriaCtrl">
+    <div ng-show="showForm">
+		    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Course</th>
+                <th>Year Level</th>
+                <th>Birth Date</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="student in StudentList">
+                <td>{{ student.firstname }}</td>
+                <td>{{ student.lastname }}</td>
+                <td>{{ student.course }}</td>
+                <td>{{ student.year }}</td>
+                <td>{{ student.birthdate }}</td>
+                <td> <a href="javascript:void(0)" class="button button-small button-positive" ng-click="edit(student.id)">Update</a>
+                    <a href="javascript:void(0)" class="button button-small button-assertive" ng-click="delete(student.id)">Delete</a>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+<button class="button button-block button-royal" ng-click="showForm = false">Add Student</button>
+
+</div>
+
+
+    <div ng-hide="showForm">
+    <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">First Name</span>
+            <input type="text" placeholder="First Name" ng-model="student.firstname">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Last Name</span>
+            <input type="text" placeholder="Last Name" ng-model="student.lastname">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Course</span>
+            <input type="text" placeholder="Course" ng-model="student.course">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Year Level</span>
+            <input type="text" placeholder="Year" ng-model="student.year">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Birthdate</span>
+            <input type="text" placeholder="Birthdate" ng-model="student.birthdate">
+        </label>
+        <br/><br/>
+        <button class="button button-large button-balanced" ng-click="AddStudent()">Save</button>
+        <button class="button button-large button-assertive" ng-click="showForm = true">Cancel</button>
+
+    </div>
+</div>
+
+
+
+</div>
+</div>
+
+</ion-view>
+  </ion-content>
+

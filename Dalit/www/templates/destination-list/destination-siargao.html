@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <ion-view class="pane" view-title="SIARGAO" >
+  <ion-content ng-controller="SetCriteriaCtrl">
+<div class="list card" ng-hide="postform">
+  <div class="item item-body">
+    <img class="full-image" src="../img/siargao.jpg">
+    <p>
+      <h1>Siargao Inclusions:  </h1>
+      <div ng-repeat="posts in SiargaoPosts">
+  <div class="item item-text-wrap">
+    <i class="icon ion-star"></i>{{ posts.post }}<br/>
+    <i class="icon ion-star"></i>{{ posts.post1 }}<br/>
+    <i class="icon ion-star"></i>{{ posts.post2 }}<br/>
+    <i class="icon ion-star"></i>{{ posts.post3 }}<br/>
+    <i class="icon ion-star"></i>{{ posts.post4 }}<br/>
+    <i class="icon ion-star"></i>{{ posts.post5 }}<br/>
+    <i class="icon ion-star"></i>{{ posts.post6 }}<br/>
+
+    <br/>
+      <div align="right">
+        <button class="button button-small button-assertive" ng-click="$parent.postform = true">Add Feedback</button>
+      <button class="button button-small button-assertive" ng-click="$parent.Showfeedback = true">Show Feedback</button>
+      
+      
+      
+    </div>
+</div>
+</div>
+
+<div ng-show="Showfeedback">
+
+<h2>Feedbacks</h2>
+      <div ng-repeat="feedback in DestinationFeedback">
+  <div class="item item-text-wrap">
+    <i class="icon ion-star"></i> {{ feedback.post }} <br/>
+
+  </div>
+</div>
+    <div align="right">
+<button class="button button-small button-assertive" ng-click="Showfeedback = false">Close</button>
+ </div>
+</div>
+    
+  </div>
+
+  </div>
+<div class="form-group" ng-show="postform">
+ <div> 
+<div class="list card">
+   <div class="item item-body">
+  <textarea class="form-control" rows="10" id="comment" placeholder="What's on your mind?" ng-model="siargao.post"></textarea><br/>
+  <button class="button button-small button-positive" ng-click="AddSiargaoPost()">Post</button>
+  <button class="button button-small button-assertive" ng-click="postform = false">Cancel</button>
+</div> 
+
+
+</ion-content>
+</ion-view>
+</body>
+</html>
